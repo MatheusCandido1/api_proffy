@@ -2,13 +2,10 @@ import express from 'express';
 
 const app = express();
 
-app.get('/users', (request, response) => {
-    const users = [
-        { name: 'Matheus', age: 22 },
-        { name: 'Vini', age: 22},
-    ];
+app.use(express.json());
 
-    return response.json(users);   
+app.get('/', (request, response) => {
+    return response.json({ message: 'Hello World'});
 })
 
 app.listen(3333);
