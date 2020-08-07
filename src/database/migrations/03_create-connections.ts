@@ -10,9 +10,10 @@ export async function up(knex: Knex){
         .onUpdate('CASCADE')
         .onDelete('CASCADE');
 
-        table.timestamp('created_at')
-        .defaultTo('now()')
-        .notNullable();
+        table.dateTime('created_at')
+        .notNullable()
+        .defaultTo(knex.raw('CURRENT_TIMESTAMP'));
+
     });
 }
 
