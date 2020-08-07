@@ -10,6 +10,7 @@ routes.post('/classes', classesControllers.create);
 routes.get('/classes', classesControllers.index);
 
 routes.post('/connections', connectionsControllers.create);
+routes.get('/connections', connectionsControllers.index);
 
 
 
